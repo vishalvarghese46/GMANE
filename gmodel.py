@@ -238,7 +238,7 @@ for message_row in cur_1 :
         except:
             print('Could not retrieve subject id',subject)
             break
-    # print(sender_id, subject_id)
+    # print(sender_id, subject_id)z
     cur.execute('INSERT OR IGNORE INTO Messages (guid,sender_id,subject_id,sent_at,headers,body) VALUES ( ?,?,?,datetime(?),?,? )',
             ( guid, sender_id, subject_id, sent_at,
             zlib.compress(message_row[0].encode()), zlib.compress(message_row[1].encode())) )
