@@ -23,7 +23,7 @@ for (message_id, message) in list(messages.items()):
     pieces = senders[sender].split("@")
     if len(pieces) != 2 : continue
     dns = pieces[1]
-    sendorgs[dns] = sendorgs.get(dns,0) + 1
+    sendorgs[dns] = sendorgs.get(dns,0) + 1         #Always parse through a list of values
 
 # pick the top schools
 orgs = sorted(sendorgs, key=sendorgs.get, reverse=True)
